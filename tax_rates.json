@@ -1,5 +1,8 @@
 {
   "cpp":{
+    "2024_cpp_rate": 5.95,
+    "2024_cpp_max": 68500,
+    "2024_cpp_untaxed": 3500,
     "2023_cpp_rate": 5.95,
     "2023_cpp_max": 3754.45,
     "2023_cpp_untaxed": 3500.00,
@@ -14,6 +17,9 @@
     "2020_cpp_untaxed": 3500.00
   },
   "ei":{
+    "2024_ei_rate": 1.66,
+    "2024_ei_max": 1049.12,
+    "2024_ei_untaxed": 3500.00,
     "2023_ei_rate": 1.63,
     "2023_ei_max": 1002.45,
     "2023_ei_untaxed": 3500.00,
@@ -28,7 +34,133 @@
     "2020_ei_untaxed": 3500.00
   },
   "income":{
+    "2024":{
+      "personal deduction":{
+        "minimum": 12719,
+        "maximum": 14398,
+        "threshold": 155625,
+        "divisor": 66083,
+        "multiplier":1679
+      },
+      "bracket1": {
+        "income": {
+          "lower": 0,
+          "upper": 51446,
+          "tax_on_income": 0.2005,
+          "tax_on_gains": 0.1003,
+          "eligible_dividends": -0.0686,
+          "non-eligible_dividends": 0.0924
+        }
+      },
+      "bracket2": {
+        "income": {
+          "lower": 51446,
+          "upper": 55867,
+          "tax_on_income": 0.2415,
+          "tax_on_gains": 0.1208,
+          "eligible_dividends": -0.0120,
+          "non-eligible_dividends": 0.1395
+        }
+      },
+      "bracket3": {
+        "income": {
+          "lower": 55867,
+          "upper": 90599,
+          "tax_on_income": 0.2965,
+          "tax_on_gains": 0.1483,
+          "eligible_dividends": 0.0639,
+          "non-eligible_dividends": 0.2028
+        }
+      },
+      "bracket4": {
+        "income": {
+          "lower": 90599,
+          "upper": 102894,
+          "tax_on_income": 0.3148,
+          "tax_on_gains": 0.1574,
+          "eligible_dividends": 0.0892,
+          "non-eligible_dividends": 0.2238
+        }
+      },
+      "bracket5": {
+        "income": {
+          "lower": 102894,
+          "upper": 106732,
+          "tax_on_income": 0.3389,
+          "tax_on_gains": 0.1695,
+          "eligible_dividends": 0.1224,
+          "non-eligible_dividends": 0.2516
+        }
+      },
+      "bracket6": {
+        "income": {
+          "lower": 106732,
+          "upper": 111733,
+          "tax_on_income": 0.3791,
+          "tax_on_gains": 0.1895,
+          "eligible_dividends": 0.1779,
+          "non-eligible_dividends": 0.2978
+        }
+      },
+      "bracket7": {
+        "income": {
+          "lower": 111733,
+          "upper": 150000,
+          "tax_on_income": 0.4341,
+          "tax_on_gains": 0.2170,
+          "eligible_dividends": 0.2538,
+          "non-eligible_dividends": 0.3610
+        }
+      },
+      "bracket8": {
+        "income": {
+          "lower": 150000,
+          "upper": 173205,
+          "tax_on_income": 0.4497,
+          "tax_on_gains": 0.2248,
+          "eligible_dividends": 0.2753,
+          "non-eligible_dividends": 0.3790
+        }
+      },
+      "bracket9": {
+        "income": {
+          "lower": 173205,
+          "upper": 220000,
+          "tax_on_income": 0.4829,
+          "tax_on_gains": 0.2414,
+          "eligible_dividends": 0.3211,
+          "non-eligible_dividends": 0.4272
+        }
+      },
+      "bracket10": {
+        "income": {
+          "lower": 220000,
+          "upper": 246752,
+          "tax_on_income": 0.4985,
+          "tax_on_gains": 0.2492,
+          "eligible_dividends": 0.3426,
+          "non-eligible_dividends": 0.4351
+        }
+      },
+      "bracket11": {
+        "income": {
+          "lower": 246752,
+          "upper": 10000000000,
+          "tax_on_income": 0.5353,
+          "tax_on_gains": 0.2676,
+          "eligible_dividends": 0.3934,
+          "non-eligible_dividends": 0.4774
+        }
+      }
+    },
     "2023":{
+      "personal deduction":{
+        "minimum": 12719,
+        "maximum": 14398,
+        "threshold": 155625,
+        "divisor": 66083,
+        "multiplier":1679
+      },
       "braket1":{
         "income":{
           "lower": 0,
