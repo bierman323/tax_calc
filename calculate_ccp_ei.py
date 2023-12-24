@@ -80,7 +80,6 @@ def main():
                                                    tax_table["income"][str(args.year)]["personal deduction"]["supplemental"],
                                                    tax_table["income"][str(args.year)]["personal deduction"]["minimum"],
                                                    tax_table["income"][str(args.year)]["personal deduction"]["maximum"])
-    print(f'The personal deduction is: ${personal_amount}')
     # Calculate Tax
     # Calculate Deductions while CPP and EI removed
     # Calculate Deductions after CPP and EI
