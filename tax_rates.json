@@ -5,27 +5,45 @@
       "cpp_max": 3867.50,
       "cpp_untaxed": 3500,
       "secondary_max": 188,
-      "secondary_rate": 0.04
+      "secondary_rate": 0.04,
+      "maximum_pensionable_cpp2": 73200,
+      "maximum_pensionable_cpp1": 68500
     },
     "2023": {
       "cpp_rate": 0.0595,
       "cpp_max": 3754.45,
-      "cpp_untaxed": 3500.00
+      "cpp_untaxed": 3500.00,
+      "secondary_max": -1,
+      "secondary_rate": -1.0,
+      "maximum_pensionable_cpp2": -1,
+      "maximum_pensionable_cpp1": 66600
     },
     "2022": {
       "cpp_rate": 0.0570,
       "cpp_max": 3499.80,
-      "cpp_untaxed": 3500.00
+      "cpp_untaxed": 3500.00,
+      "secondary_max": -1,
+      "secondary_rate": -1.0,
+      "maximum_pensionable_cpp2": -1,
+      "maximum_pensionable_cpp1": 64900
     },
     "2021": {
       "cpp_rate": 0.0545,
       "cpp_max": 3166.45,
-      "cpp_untaxed": 3500.00
+      "cpp_untaxed": 3500.00,
+      "secondary_max": -1,
+      "secondary_rate": -1.0,
+      "maximum_pensionable_cpp2": -1,
+      "maximum_pensionable_cpp1": 61600
     },
     "2020": {
       "cpp_rate": 0.0525,
       "cpp_max": 2898.00,
-      "cpp_untaxed": 3500.00
+      "cpp_untaxed": 3500.00,
+      "secondary_max": -1,
+      "secondary_rate": -1.0,
+      "maximum_pensionable_cpp2": -1,
+      "maximum_pensionable_cpp1": 58700
     }
   },
   "ei":{
