@@ -1,37 +1,57 @@
 {
   "cpp":{
-    "2024_cpp_rate": 5.95,
-    "2024_cpp_max": 68500,
-    "2024_cpp_untaxed": 3500,
-    "2023_cpp_rate": 5.95,
-    "2023_cpp_max": 3754.45,
-    "2023_cpp_untaxed": 3500.00,
-    "2022_cpp_rate": 5.70,
-    "2022_cpp_max": 3499.80,
-    "2022_cpp_untaxed": 3500.00,
-    "2021_cpp_rate": 5.45,
-    "2021_cpp_max": 3166.45,
-    "2021_cpp_untaxed": 3500.00,
-    "2020_cpp_rate": 5.25,
-    "2020_cpp_max": 2898.00,
-    "2020_cpp_untaxed": 3500.00
+    "2024":{
+      "cpp_rate": 0.0595,
+      "cpp_max": 68500,
+      "cpp_untaxed": 3500
+    },
+    "2023": {
+      "cpp_rate": 0.0595,
+      "cpp_max": 3754.45,
+      "cpp_untaxed": 3500.00
+    },
+    "2022": {
+      "cpp_rate": 0.0570,
+      "cpp_max": 3499.80,
+      "cpp_untaxed": 3500.00
+    },
+    "2021": {
+      "cpp_rate": 0.0545,
+      "cpp_max": 3166.45,
+      "cpp_untaxed": 3500.00
+    },
+    "2020": {
+      "cpp_rate": 0.0525,
+      "cpp_max": 2898.00,
+      "cpp_untaxed": 3500.00
+    }
   },
   "ei":{
-    "2024_ei_rate": 1.66,
-    "2024_ei_max": 1049.12,
-    "2024_ei_untaxed": 3500.00,
-    "2023_ei_rate": 1.63,
-    "2023_ei_max": 1002.45,
-    "2023_ei_untaxed": 3500.00,
-    "2022_ei_rate": 1.58,
-    "2022_ei_max": 952.74,
-    "2022_ei_untaxed": 3500.00,
-    "2021_ei_rate": 1.58,
-    "2021_ei_max": 889.54,
-    "2021_ei_untaxed": 3500.00,
-    "2020_ei_rate": 1.58,
-    "2020_ei_max": 856.36,
-    "2020_ei_untaxed": 3500.00
+    "2024": {
+      "ei_rate": 0.0166,
+      "ei_max": 1049.12,
+      "ei_untaxed": 3500.00
+    },
+    "2023": {
+      "ei_rate": 0.0163,
+      "ei_max": 1002.45,
+      "ei_untaxed": 3500.00
+    },
+    "2022": {
+      "ei_rate": 0.0158,
+      "ei_max": 952.74,
+      "ei_untaxed": 3500.00
+    },
+    "2021": {
+      "ei_rate": 0.0158,
+      "ei_max": 889.54,
+      "ei_untaxed": 3500.00
+    },
+    "2020": {
+      "ei_rate": 0.0158,
+      "ei_max": 856.36,
+      "ei_untaxed": 3500.00
+    }
   },
   "income":{
     "2024":{
@@ -40,7 +60,7 @@
         "maximum": 14398,
         "threshold": 155625,
         "divisor": 66083,
-        "multiplier":1679
+        "supplemental":1679
       },
       "bracket1": {
         "income": {
@@ -159,7 +179,7 @@
         "maximum": 14398,
         "threshold": 155625,
         "divisor": 66083,
-        "multiplier":1679
+        "supplemental":1679
       },
       "braket1":{
         "income":{
