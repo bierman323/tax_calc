@@ -12,38 +12,22 @@
     "2023": {
       "cpp_rate": 0.0595,
       "cpp_max": 3754.45,
-      "cpp_untaxed": 3500.00,
-      "secondary_max": -1,
-      "secondary_rate": -1.0,
-      "maximum_pensionable_cpp2": -1,
-      "maximum_pensionable_cpp1": 66600
+      "cpp_untaxed": 3500.00
     },
     "2022": {
       "cpp_rate": 0.0570,
       "cpp_max": 3499.80,
-      "cpp_untaxed": 3500.00,
-      "secondary_max": -1,
-      "secondary_rate": -1.0,
-      "maximum_pensionable_cpp2": -1,
-      "maximum_pensionable_cpp1": 64900
+      "cpp_untaxed": 3500.00
     },
     "2021": {
       "cpp_rate": 0.0545,
       "cpp_max": 3166.45,
-      "cpp_untaxed": 3500.00,
-      "secondary_max": -1,
-      "secondary_rate": -1.0,
-      "maximum_pensionable_cpp2": -1,
-      "maximum_pensionable_cpp1": 61600
+      "cpp_untaxed": 3500.00
     },
     "2020": {
       "cpp_rate": 0.0525,
       "cpp_max": 2898.00,
-      "cpp_untaxed": 3500.00,
-      "secondary_max": -1,
-      "secondary_rate": -1.0,
-      "maximum_pensionable_cpp2": -1,
-      "maximum_pensionable_cpp1": 58700
+      "cpp_untaxed": 3500.00
     }
   },
   "ei":{
@@ -201,7 +185,7 @@
         "divisor": 66083,
         "supplemental":1679
       },
-      "braket1":{
+      "bracket1":{
         "income":{
           "lower": 0,
           "upper": 49231,
@@ -211,7 +195,7 @@
           "non-eligible_dividends": 0.0924
         }
       },
-      "braket2":{
+      "bracket2":{
         "income":{
           "lower": 49231,
           "upper": 53359,
@@ -221,7 +205,7 @@
           "non-eligible_dividends": 0.1395
         }
       },
-      "braket3":{
+      "bracket3":{
         "income":{
           "lower": 53359,
           "upper": 86698,
@@ -231,7 +215,7 @@
           "non-eligible_dividends": 0.2028
         }
       },
-      "braket4":{
+      "bracket4":{
         "income":{
           "lower": 86698,
           "upper": 98463,
@@ -241,7 +225,7 @@
           "non-eligible_dividends": 0.2238
         }
       },
-      "braket5":{
+      "bracket5":{
         "income":{
           "lower": 98463,
           "upper": 102135,
@@ -251,7 +235,7 @@
           "non-eligible_dividends": 0.2516
         }
       },
-      "braket6":{
+      "bracket6":{
         "income":{
           "lower": 102135,
           "upper": 106717,
@@ -261,7 +245,7 @@
           "non-eligible_dividends": 0.2978
         }
       },
-      "braket7":{
+      "bracket7":{
         "income":{
           "lower": 106717,
           "upper": 150000,
@@ -271,7 +255,7 @@
           "non-eligible_dividends": 0.2538
         }
       },
-      "braket8":{
+      "bracket8":{
         "income":{
           "lower": 150000,
           "upper": 165430,
@@ -281,7 +265,7 @@
           "non-eligible_dividends": 0.379
         }
       },
-      "braket9":{
+      "bracket9":{
         "income":{
           "lower": 165430,
           "upper": 220000,
@@ -291,7 +275,7 @@
           "non-eligible_dividends": 0.4172
         }
       },
-      "braket10":{
+      "bracket10":{
         "income":{
           "lower": 220000,
           "upper": 235675,
@@ -301,7 +285,7 @@
           "non-eligible_dividends": 0.4351
         }
       },
-      "braket11":{
+      "bracket11":{
         "income":{
           "lower": 235675,
           "upper": 100000000000,

@@ -2,22 +2,27 @@ import argparse, json
 
 def get_args():
     parser = argparse.ArgumentParser(description="pay")
-    parser.add_argument('-i', dest='income',help='Annual Income', type=float)
-    parser.add_argument('-p', dest='pay', help='hourly rate of pay', type=float)
-    parser.add_argument('-m', dest='hours', help='average hours per week', type=float)
-    parser.add_argument('-n', dest='periods', help='number of pay periods', type=int)
-    parser.add_argument('-y', dest='year', help='tax year', type=int)
+    parser.add_argument('-i', dest='income',help='Annual Income', type=float, default=58000.00)
+    parser.add_argument('-p', dest='pay', help='hourly rate of pay', type=float, default=27.00)
+    parser.add_argument('-m', dest='hours', help='average hours per week', type=float, default=40)
+    parser.add_argument('-n', dest='periods', help='number of pay periods', type=int, default=26)
+    parser.add_argument('-y', dest='year', help='tax year', type=int, default=2023)
 
     return parser.parse_args()
 
-def calculate_cpp(gross_income, cpp_percent, cpp_max, cpp_untaxed):
+def calculate_cpp(gross_income, cpp_values):
     # Gross Income * Cpp Percent
     # least amount of calculation or cpp max
-    calculated_cpp = round((gross_income-cpp_untaxed) * cpp_percent, 2)
-    if calculated_cpp > cpp_max:
-        return cpp_max
-    else:
-        return calculated_cpp
+    calculated_cpp = round((gross_income-cpp_values["cpp_untaxed"]) * cpp_values["cpp_rate"], 2)
+    if calculated_cpp > cpp_values["cpp_max"]:
+        calculated_cpp = cpp_values["cpp_max"]
+        if "secondary_rate" in cpp_values:
+            more_to_tax = gross_income - cpp_values["cpp_untaxed"]-cpp_values["maximum_pensionable_cpp1"]
+            cpp2 = more_to_tax * cpp_values["secondary_rate"]
+            if cpp2 > cpp_values["secondary_max"]:
+                cpp2 = cpp_values["secondary_max"]
+            calculated_cpp = calculated_cpp + cpp2
+    return calculated_cpp
 
 def calculate_ei(gross_income, ei_percent, ei_max, ei_untaxed):
     # Gross Income * Cpp Percent
@@ -44,6 +49,24 @@ def calculate_personal_deduction(gross_income, threshold, divisor, supplemental,
     else:
         return min_amount
 
+def calculate_bracket_tax(taxable_income, tax_dict):
+    if taxable_income > tax_dict["upper"]:
+        bracket_income = tax_dict["upper"] - tax_dict["lower"]
+    else:
+        bracket_income = taxable_income - tax_dict["lower"]
+    return round(bracket_income * tax_dict["tax_on_income"], 2)
+    
+def calculate_annual_tax(gross_income, tax_values, personal_deduction):
+    less_personal_amount= round(personal_deduction * tax_values["bracket1"]["income"]["tax_on_income"], 2)
+    total_tax = 0 - less_personal_amount
+    for bracket in tax_values:
+        if "bracket" in bracket:
+            if tax_values[bracket]["income"]["lower"] < gross_income:
+                total_tax += calculate_bracket_tax(gross_income,
+                                                    tax_values[bracket]["income"])
+    
+    return round(total_tax, 2)
+
 
 def read_in_tax_table():
     # Read in the tax json file. it should be in the same location as this file
@@ -62,17 +85,18 @@ def main():
     args = get_args()
     # Get the tax tables
     tax_table = read_in_tax_table()
+    print(f'For the year {args.year} on ${args.income} you will pay the following')
     # Calculate CPP
     cpp_contribution=calculate_cpp(args.income, 
-                                   tax_table["cpp"][str(args.year)]["cpp_rate"],
-                                   tax_table["cpp"][str(args.year)]["cpp_max"],
-                                   tax_table["cpp"][str(args.year)]["cpp_untaxed"])
+                                   tax_table["cpp"][str(args.year)])
+    print(f'CPP deduction: ${cpp_contribution}')
 
     # Calculate EI
     ei_contribution=calculate_ei(args.income,
                                  tax_table["ei"][str(args.year)]["ei_rate"],
                                  tax_table["ei"][str(args.year)]["ei_max"],
                                  tax_table["ei"][str(args.year)]["ei_untaxed"])
+    print(f'EI contributions: ${ei_contribution}')
     # Calculate Personal Tax Deduction
     personal_amount = calculate_personal_deduction(args.income,
                                                    tax_table["income"][str(args.year)]["personal deduction"]["threshold"],
@@ -80,7 +104,17 @@ def main():
                                                    tax_table["income"][str(args.year)]["personal deduction"]["supplemental"],
                                                    tax_table["income"][str(args.year)]["personal deduction"]["minimum"],
                                                    tax_table["income"][str(args.year)]["personal deduction"]["maximum"])
+    print(f'Personal deduction: ${personal_amount}')
     # Calculate Tax
+    tax_deducted_annually = calculate_annual_tax(args.income,
+                                                 tax_table["income"][str(args.year)],
+                                                 personal_amount)
+    print(f'Total tax deducted: ${tax_deducted_annually}')
+
+    take_home_pay = round(args.income - cpp_contribution - ei_contribution - tax_deducted_annually, 2)
+    print(f'Your take home pay will be: ${take_home_pay}')
+    monthly_pay = round(take_home_pay / 12, 2)
+    print(f'Your monthly pay will be: ${monthly_pay}')
     # Calculate Deductions while CPP and EI removed
     # Calculate Deductions after CPP and EI
     # Calculate Hourly pay for deductions
