@@ -2,8 +2,10 @@
   "cpp":{
     "2024":{
       "cpp_rate": 0.0595,
-      "cpp_max": 68500,
-      "cpp_untaxed": 3500
+      "cpp_max": 3867.50,
+      "cpp_untaxed": 3500,
+      "secondary_max": 188,
+      "secondary_rate": 0.04
     },
     "2023": {
       "cpp_rate": 0.0595,
