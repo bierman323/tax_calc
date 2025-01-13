@@ -121,8 +121,8 @@ def main():
     # Calculate Hourly pay based off number of hours
     # Calculate Weekly Pay
     # Calculate Bi Weekly Pay
-    # Calcualte Bi Monthly Pay
-    # Calcualte Monthly Pay
+    # Calculate Bi Monthly Pay
+    # Calculate Monthly Pay
 
 if __name__ == "__main__":
     main()
